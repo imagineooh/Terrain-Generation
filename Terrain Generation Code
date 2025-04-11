@@ -168,8 +168,8 @@ while changed:
                         if diff > 0:
                             blended_water_terrain[x, y] -= diff
                             blended_water_terrain[x,y]=blended_water_terrain[x,y]-1
-                            blended_water_terrain[nx, ny] += diff * 0.1  # Some sediment deposits
-                            highlight_coords.append((nx, ny))  # Append coordinates, not values
+                            blended_water_terrain[nx, ny] += diff * 0.1  
+                            highlight_coords.append((nx, ny))  
                             highlight_values.append(blended_water_terrain[nx, ny])
                             changed = True
                     else:
@@ -190,11 +190,11 @@ for (x, y) in coords_above_threshold:
 
 """
 for coord in coords_above_threshold:
-    x, y = coord  # Extract the x and y coordinates from each tuple
-    blended_water_terrain[x, y] -= 10  # Subtract a value (e.g., 10) to "dig" a hole
+    x, y = coord  
+    blended_water_terrain[x, y] -= 10  
 
 for coord in coords_above_threshold:
-    x, y = coord  # Extract the x and y coordinates from each tuple
+    x, y = coord  
 
     hole_depth = -blended_water_terrain[x, y]
     water_height = min(hole_depth, 5)
@@ -206,7 +206,7 @@ for coord in coords_above_threshold:
 #blended_water_terrain=blended_water_terrain-lake_map
 
 #blended_water_terrain=gaussian_filter(blended_water_terrain, sigma=1)
-water_level = (np.max(blended_map)+np.min(blended_map))/2 #i chose not to put zero so that you can see as much over the water than under
+water_level = (np.max(blended_map)+np.min(blended_map))/2 #I chose not to put zero so that you can see as much over the water than under
 
 
 terrain_with_water = np.copy(blended_water_terrain)
@@ -239,7 +239,7 @@ ax1.set_title('Blended Water Terrain - 3D')
 
 
 ax2 = fig.add_subplot(122)
-ax2.imshow(terrain_with_water, cmap='terrain', interpolation='nearest')  # Display terrain with water
+ax2.imshow(terrain_with_water, cmap='terrain', interpolation='nearest')  
 ax2.set_title('Blended Water Terrain - 2D')
 ax2.set_xlabel('X')
 ax2.set_ylabel('Y')
