@@ -3,4 +3,4 @@ This is my first terrain generation project. It has octaved noise implemented an
 
 I recommend to look at the page "Terrain-Generation Wiki" to have more precise documentation
 
-![Preview of Generated Terrain](assets/preview.png)
+
