@@ -1,0 +1,8 @@
+#THIS CODE IS A TEST FOR THE hydro_terrain LIBRARY. IT IS ALSO HOW TO IMPLEMENT THE CODE IN 
+
+from hydro_terrain import generate_terrain_map, generate_water_map, simulate_erosion, plot_terrain
+
+terrain = generate_terrain_map()
+water, lake = generate_water_map()
+eroded, highlights, values = simulate_erosion(terrain, lake)
+plot_terrain(terrain, eroded, highlights, values, water)
